@@ -20,7 +20,7 @@ http.createServer((req, res) => {
     });
 
     req.on('end', () => {
-      const parsedBody = querystring.parse(body)
+      const parsedBody = querystring.parse(body)//요청본문을 파싱
       // querystring 모듈은 querystring부분을 다룰 때 사용하는 모듈로, 일반적으로 불러올시 객체의 형태대로 구분하여 불러온다. 
       const { username, password } = parsedBody;
 
@@ -28,11 +28,12 @@ http.createServer((req, res) => {
       console.log(`form 입력으로부터 받은 데이터 확인 ->`, username);
       console.log(`form 입력으로부터 받은 데이터 확인 -> `, password);
 
-      res.writehead(200, {"Content-Type" : "teex/plain"});
+      res.writeHead(200, {"Content-Type" : "text/plain"});
       res.end("login success!!");
-    })
+    });
   }
 
+  
 }).listen(3000, () => {
-  console.log(`cli 창에서 컨트롤 누른후 옆에 포트 누르면 편리하게 확인 -> http://localhost:${PORT}/`);
+  console.log(`cli 창에서 컨트롤 누른후 옆에 포트 누르면 편리하게 확인 -> http://localhost:3000/`);
 });
