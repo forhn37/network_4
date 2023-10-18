@@ -4,6 +4,8 @@ const querystring = require('querystring')
 http.createServer((req, res) => {
 
   if(req.method === 'POST' && req.url === '/login') {
+
+    
     // HTML 폼 태그 작성 부분에서 method = "POST" 로 지정하는 것으로 변경
     let body = '';
     // 몸통이라는 임의의 변수에 담는다. 'POST'요청은 본문이라는 것이 존재하기 때문에
@@ -34,6 +36,6 @@ http.createServer((req, res) => {
   }
 
   
-}).listen(3000, () => {
-  console.log(`cli 창에서 컨트롤 누른후 옆에 포트 누르면 편리하게 확인 -> http://localhost:3000/`);
+}).listen(8000, () => {
+  console.log("cli 창에서 컨트롤 누른후 옆에 포트 누르면 편리하게 확인 -> http://localhost:8000/");
 });
